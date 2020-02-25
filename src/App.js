@@ -14,6 +14,7 @@ function App() {
   const [loading, setloading] = useState(false);
   const [peoplePerPage, setpeoplePerPage] = useState(4);
   const [show, setShow] = useState(false);
+  const [targetedPerson, settargetedPerson] = useState('')
 
   useEffect(() => {
     const peoples = server;
@@ -47,7 +48,7 @@ function App() {
     setTimeout(() => {
       setloading(false);
       setpeoplePerPage(peoplePerPage + 4);
-    }, 2000);
+    }, 2500);
   };
 
   const navigateFirstPage = () => {
@@ -55,26 +56,37 @@ function App() {
     setpeoplePerPage(4);
   };
   const toggleModal = () => {
-    setShow(true)
+    setShow(true);
+  };
+  const settingShow = () => {
+    setShow(false);
+  };
+  const sendPersonToPerent = (person) => {
+    settargetedPerson(person)
     
   }
-  const settingShow = () => {
-    setShow(false)
-  }
+  
 
   return (
     <div className="App p-4">
       <div className="person_area">
         {loading ? (
           <div className="spinner">
-            <div className='centering'>
+            <div className="centering">
               <RotateSpinner size={40} color="green" loading={loading} />
             </div>
           </div>
         ) : (
           <div className="row">
             {currentPeople.map(person => {
-              return <Person toggleModal={toggleModal} person={person} key={person.id} />;
+              return (
+                <Person
+                  toggleModal={toggleModal}
+                  person={person}
+                  key={person.id}
+                  sendPersonToPerent={sendPersonToPerent}
+                />
+              );
             })}
           </div>
         )}
@@ -88,7 +100,7 @@ function App() {
         />
       </div>
       <div>
-        <ModalToggle peoples = {persons} show={show} settingShow={settingShow}/>
+        <ModalToggle peoples={targetedPerson} show={show} settingShow={settingShow}  />
       </div>
     </div>
   );

@@ -18,3 +18,32 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.id {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: normal;
+  color: #2C3335;
+}
+.hash {
+  margin-top: -20px;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: -1px;
+  color: #2C3335;
+}
+.number {
+  font-size: 14px;
+  margin-top: 30px;
+  color: #616C6F;
+  padding-left: 20px;
+}
+.email {
+  font-size: 14px;
+  margin-top: -14px;
+  color: #616C6F;
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.fas, .far {
+  padding-right: 8px;
+}
