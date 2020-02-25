@@ -3,7 +3,8 @@ import server from "./data/server";
 import "./App.css";
 import Person from "./components/Person/Person";
 import Button from "./components/Button/Button";
-import { PushSpinner, TraceSpinner, RotateSpinner } from "react-spinners-kit";
+import { RotateSpinner } from "react-spinners-kit";
+import ModalToggle from "./components/modal/ModalToggle";
 
 function App() {
   //declaring all  state
@@ -12,6 +13,7 @@ function App() {
   const [currentPage, setcurrentPage] = useState(1);
   const [loading, setloading] = useState(false);
   const [peoplePerPage, setpeoplePerPage] = useState(4);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     const peoples = server;
@@ -52,12 +54,19 @@ function App() {
     setcurrentPage(1);
     setpeoplePerPage(4);
   };
+  const toggleModal = () => {
+    setShow(true)
+    
+  }
+  const settingShow = () => {
+    setShow(false)
+  }
 
   return (
     <div className="App p-4">
       <div className="person_area">
         {loading ? (
-          <div className="spinner d-flex align-items-center">
+          <div className="spinner">
             <div className='centering'>
               <RotateSpinner size={40} color="green" loading={loading} />
             </div>
@@ -65,7 +74,7 @@ function App() {
         ) : (
           <div className="row">
             {currentPeople.map(person => {
-              return <Person person={person} key={person.id} />;
+              return <Person toggleModal={toggleModal} person={person} key={person.id} />;
             })}
           </div>
         )}
@@ -77,6 +86,9 @@ function App() {
           quickLoadItems={quickLoadItems}
           navigateFirstPage={navigateFirstPage}
         />
+      </div>
+      <div>
+        <ModalToggle peoples = {persons} show={show} settingShow={settingShow}/>
       </div>
     </div>
   );
