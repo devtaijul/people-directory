@@ -8,10 +8,7 @@ function Person({ person, toggleModal, sendPersonToPerent }) {
   };
 
   return (
-    <div
-      className="col-sm-3 p-3 mb-2 mt-2 person-details"
-      style={{ height: "180px" }}
-    >
+    <div className='wrapping'>
       <div className="header d-flex justify-content-between">
         <h6 className="align-self-center" style={{ fontSize: "15px" }}>
           {person.name}

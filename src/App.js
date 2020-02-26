@@ -5,10 +5,9 @@ import Person from "./components/Person/Person";
 import Button from "./components/Button/Button";
 import { RotateSpinner } from "react-spinners-kit";
 import ModalToggle from "./components/modal/ModalToggle";
-import { BrowserRouter, Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
-  
   //declaring all  state
 
   const [persons, setPersons] = useState([]);
@@ -79,7 +78,7 @@ function App() {
               </div>
             </div>
           ) : (
-            <div className="row">
+            <div className="wrapper">
               {currentPeople.map(person => {
                 return (
                   <Person
@@ -109,7 +108,7 @@ function App() {
           />
         </div>
         <Route path='/name' render={() => {
-          
+          return <h1> I am a Router</h1>
         }} />
       </div>
     </BrowserRouter>
