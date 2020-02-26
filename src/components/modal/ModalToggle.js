@@ -28,13 +28,21 @@ function ModalToggle({ show, settingShow, peoples }) {
             {peoples.number && (
               <p className="number" onClick={() => setopenNumber(true)}>
                 <i className="fas fa-phone"></i>
-                {openNumber ? `${peoples.number}` : "click to view"}
+                {openNumber ? (
+                  <a href={`tel:${peoples.number}`}>{peoples.number}</a>
+                ) : (
+                  "click to view"
+                )}
               </p>
             )}
             {peoples.email && (
               <p className="email" onClick={() => setopenEmail(true)}>
                 <i className="far fa-envelope"></i>
-                {openEmail ? `${peoples.email}` : "click to view"}
+                {openEmail ? (
+                  <a href={`mailto:${peoples.email}`}>{peoples.email}</a>
+                ) : (
+                  "click to view"
+                )}
               </p>
             )}
           </div>

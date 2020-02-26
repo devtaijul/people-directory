@@ -81,13 +81,10 @@
   color: #fff;
   background-color: rgb(255, 94, 88);
 }
-.box {
-  background: grey;
-  padding: 20px 20px 20px 20px;
-}
+
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 10px;
 }
 .wrapping {

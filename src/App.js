@@ -23,6 +23,9 @@ function App() {
     setPersons(peoples);
   }, []);
 
+  console.log(currentPage);
+  
+
   // getting current people
   const indexOfLastPeople = currentPage * peoplePerPage;
   const indexOfFirstPeople = indexOfLastPeople - peoplePerPage;
@@ -37,9 +40,9 @@ function App() {
 
   const quickLoadItems = () => {
     setloading(true);
-
     setTimeout(() => {
       setloading(false);
+      setcurrentPage(currentPage);
       setpeoplePerPage(peoplePerPage + 4);
     }, 500);
   };
@@ -49,6 +52,7 @@ function App() {
 
     setTimeout(() => {
       setloading(false);
+      setcurrentPage(currentPage);
       setpeoplePerPage(peoplePerPage + 4);
     }, 2500);
   };
