@@ -7,7 +7,7 @@
 }
 .spinner {
   position: relative;
-  background-color: rgba(19, 18, 18, 0.109);
+  background-color: rgba(19, 18, 18, 0.102);
 }
 .centering {
   width: 50px;
@@ -22,31 +22,32 @@
   margin-top: 10px;
   font-size: 15px;
   font-weight: normal;
-  color: #2C3335;
+  color: #2c3335;
 }
 .hash {
   margin-top: -20px;
   font-size: 15px;
   font-weight: normal;
   margin-bottom: -1px;
-  color: #2C3335;
+  color: #2c3335;
 }
 .contacting {
   margin-top: 30px;
 }
 .number {
   font-size: 14px;
-  color: #616C6F;
+  color: #616c6f;
   padding-left: 20px;
 }
 .email {
   font-size: 14px;
   margin-top: -14px;
-  color: #616C6F;
+  color: #616c6f;
   padding-bottom: 20px;
   padding-left: 20px;
 }
-.fas, .far {
+.fas,
+.far {
   padding-right: 8px;
 }
 .direction-button button {
@@ -56,12 +57,12 @@
   padding: 6px 20px;
 }
 .btn-custom {
-  border: 1px solid #DAE0E2;
-  color: #616C6F;
+  border: 1px solid #dae0e2;
+  color: #616c6f;
 }
 .btn-custom:hover {
-  border: 1px solid #74B9FF;
-  color: #74B9FF;
+  border: 1px solid #74b9ff;
+  color: #74b9ff;
 }
 .More-btn {
   color: #fff;
@@ -69,11 +70,11 @@
   padding: 5px 10px;
 }
 .More-btn:hover {
-  background-color: #3498DB;
+  background-color: #3498db;
   color: #ffffff;
 }
 .btn-red {
-  background-color: #FF4848;
+  background-color: #ff4848;
   color: #fff;
 }
 .btn-red:hover {
@@ -85,12 +86,11 @@
   padding: 20px 20px 20px 20px;
 }
 .wrapper {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
 }
 .wrapping {
-  border: 1px solid #DAE0E2;
+  border: 1px solid #dae0e2;
   padding: 20px;
-  z-index: -1;
 }

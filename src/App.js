@@ -74,17 +74,17 @@ function App() {
           {loading ? (
             <div className="spinner">
               <div className="wrapper">
-              {currentPeople.map(person => {
-                return (
-                  <Person
-                    toggleModal={toggleModal}
-                    person={person}
-                    key={person.id}
-                    sendPersonToPerent={sendPersonToPerent}
-                  />
-                );
-              })}
-            </div>
+                {currentPeople.map(person => {
+                  return (
+                    <Person
+                      toggleModal={toggleModal}
+                      person={person}
+                      key={person.id}
+                      sendPersonToPerent={sendPersonToPerent}
+                    />
+                  );
+                })}
+              </div>
               <div className="centering">
                 <RotateSpinner size={40} color="green" loading={loading} />
               </div>
@@ -98,6 +98,7 @@ function App() {
                     person={person}
                     key={person.id}
                     sendPersonToPerent={sendPersonToPerent}
+                    loading={loading}
                   />
                 );
               })}
@@ -119,9 +120,12 @@ function App() {
             settingShow={settingShow}
           />
         </div>
-        <Route path='/name' render={() => {
-          return <h1> I am a Router</h1>
-        }} />
+        <Route
+          path="/name"
+          render={() => {
+            return <h1> I am a Router</h1>;
+          }}
+        />
       </div>
     </BrowserRouter>
   );
