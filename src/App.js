@@ -73,6 +73,18 @@ function App() {
         <div className="person_area">
           {loading ? (
             <div className="spinner">
+              <div className="wrapper">
+              {currentPeople.map(person => {
+                return (
+                  <Person
+                    toggleModal={toggleModal}
+                    person={person}
+                    key={person.id}
+                    sendPersonToPerent={sendPersonToPerent}
+                  />
+                );
+              })}
+            </div>
               <div className="centering">
                 <RotateSpinner size={40} color="green" loading={loading} />
               </div>
