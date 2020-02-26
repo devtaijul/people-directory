@@ -47,3 +47,17 @@
 .fas, .far {
   padding-right: 8px;
 }
+.direction-button button {
+  font-size: 14px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 6px 20px;
+}
+.btn-custom {
+  border: 1px solid #DAE0E2;
+  color: #616C6F;
+}
+.btn-custom:hover {
+  border: 1px solid #74B9FF;
+  color: #74B9FF;
+}
