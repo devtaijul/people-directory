@@ -4,7 +4,6 @@ import { Modal } from "react-bootstrap";
 function ModalToggle({ show, settingShow, peoples }) {
   const [openNumber, setopenNumber] = useState(false);
   const [openEmail, setopenEmail] = useState(false);
-  
 
   return (
     <>
@@ -25,14 +24,20 @@ function ModalToggle({ show, settingShow, peoples }) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p className="number" onClick={() => setopenNumber(!openNumber)}>
-            <i className="fas fa-phone"></i>
-            {openNumber ? `${peoples.number}`: 'click to view'}
-          </p>
-          <p className="email" onClick={() => setopenEmail(!openEmail)}>
-            <i className="far fa-envelope"></i>
-            {openEmail ? `${peoples.email}`: 'click to view'}
-          </p>
+          <div className="contacting">
+            {peoples.number && (
+              <p className="number" onClick={() => setopenNumber(true)}>
+                <i className="fas fa-phone"></i>
+                {openNumber ? `${peoples.number}` : "click to view"}
+              </p>
+            )}
+            {peoples.email && (
+              <p className="email" onClick={() => setopenEmail(true)}>
+                <i className="far fa-envelope"></i>
+                {openEmail ? `${peoples.email}` : "click to view"}
+              </p>
+            )}
+          </div>
         </Modal.Body>
       </Modal>
     </>

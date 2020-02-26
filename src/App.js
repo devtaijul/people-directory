@@ -5,8 +5,10 @@ import Person from "./components/Person/Person";
 import Button from "./components/Button/Button";
 import { RotateSpinner } from "react-spinners-kit";
 import ModalToggle from "./components/modal/ModalToggle";
+import { BrowserRouter, Router, Route } from "react-router-dom";
 
 function App() {
+  
   //declaring all  state
 
   const [persons, setPersons] = useState([]);
@@ -14,7 +16,7 @@ function App() {
   const [loading, setloading] = useState(false);
   const [peoplePerPage, setpeoplePerPage] = useState(4);
   const [show, setShow] = useState(false);
-  const [targetedPerson, settargetedPerson] = useState('')
+  const [targetedPerson, settargetedPerson] = useState("");
 
   useEffect(() => {
     const peoples = server;
@@ -31,7 +33,7 @@ function App() {
 
   const loadNextFour = () => {
     setcurrentPage(currentPage + 1);
-    setpeoplePerPage(4)
+    setpeoplePerPage(4);
   };
 
   const quickLoadItems = () => {
@@ -62,48 +64,55 @@ function App() {
   const settingShow = () => {
     setShow(false);
   };
-  const sendPersonToPerent = (person) => {
-    settargetedPerson(person)
-    
-  }
-  
+  const sendPersonToPerent = person => {
+    settargetedPerson(person);
+  };
 
   return (
-    <div className="App p-4">
-      <div className="person_area">
-        {loading ? (
-          <div className="spinner">
-            <div className="centering">
-              <RotateSpinner size={40} color="green" loading={loading} />
+    <BrowserRouter>
+      <div className="App p-4">
+        <div className="person_area">
+          {loading ? (
+            <div className="spinner">
+              <div className="centering">
+                <RotateSpinner size={40} color="green" loading={loading} />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="row">
-            {currentPeople.map(person => {
-              return (
-                <Person
-                  toggleModal={toggleModal}
-                  person={person}
-                  key={person.id}
-                  sendPersonToPerent={sendPersonToPerent}
-                />
-              );
-            })}
-          </div>
-        )}
+          ) : (
+            <div className="row">
+              {currentPeople.map(person => {
+                return (
+                  <Person
+                    toggleModal={toggleModal}
+                    person={person}
+                    key={person.id}
+                    sendPersonToPerent={sendPersonToPerent}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </div>
+        <div className="btn-area">
+          <Button
+            lazyLoadItems={lazyLoadItems}
+            loadNextFour={loadNextFour}
+            quickLoadItems={quickLoadItems}
+            navigateFirstPage={navigateFirstPage}
+          />
+        </div>
+        <div>
+          <ModalToggle
+            peoples={targetedPerson}
+            show={show}
+            settingShow={settingShow}
+          />
+        </div>
+        <Route path='/name' render={() => {
+          
+        }} />
       </div>
-      <div className="btn-area">
-        <Button
-          lazyLoadItems={lazyLoadItems}
-          loadNextFour={loadNextFour}
-          quickLoadItems={quickLoadItems}
-          navigateFirstPage={navigateFirstPage}
-        />
-      </div>
-      <div>
-        <ModalToggle peoples={targetedPerson} show={show} settingShow={settingShow}  />
-      </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
