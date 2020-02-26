@@ -16,7 +16,7 @@ function Person({ person, toggleModal, sendPersonToPerent }) {
         <h6 className="align-self-center" style={{ fontSize: "15px" }}>
           {person.name}
         </h6>
-        <button onClick={() => sendPerson()} className="btn btn-primary">
+        <button onClick={() => sendPerson()} className="btn More-btn">
           More
         </button>
       </div>

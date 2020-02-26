@@ -31,6 +31,7 @@ function App() {
 
   const loadNextFour = () => {
     setcurrentPage(currentPage + 1);
+    setpeoplePerPage(4)
   };
 
   const quickLoadItems = () => {

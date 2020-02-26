@@ -61,3 +61,20 @@
   border: 1px solid #74B9FF;
   color: #74B9FF;
 }
+.More-btn {
+  color: #fff;
+  background-color: rgb(66, 161, 255);
+  padding: 5px 10px;
+}
+.More-btn:hover {
+  background-color: #3498DB;
+  color: #ffffff;
+}
+.btn-red {
+  background-color: #FF4848;
+  color: #fff;
+}
+.btn-red:hover {
+  color: #fff;
+  background-color: rgb(255, 94, 88);
+}
